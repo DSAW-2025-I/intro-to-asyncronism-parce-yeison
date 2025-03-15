@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Component</title>
+</head>
+<body>
+
+    <mi-tarjeta titulo="Mi primer componente" contenido="Esto es un componente sin framework"></mi-tarjeta>
+    <mi-tarjeta titulo="Otro componente" contenido="Puedes hacer esto sin React"></mi-tarjeta>
+
+    <script>
+        class MiTarjeta extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: "open" });
+
+                // Template del componente
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        .tarjeta {
+                            border: 1px solid #ccc;
+                            padding: 10px;
+                            border-radius: 5px;
+                            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+                            font-family: Arial, sans-serif;
+                        }
+                        h3 {
+                            margin: 0;
+                            color: #333;
+                        }
+                        p {
+                            margin: 5px 0 0;
+                        }
+                    </style>
+                    <div class="tarjeta">
+                        <h3>${this.getAttribute("titulo")}</h3>
+                        <p>${this.getAttribute("contenido")}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Registrar el componente
+        customElements.define("mi-tarjeta", MiTarjeta);
+    </script>
+
+</body>
+</html>
