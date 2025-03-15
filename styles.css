@@ -2,7 +2,18 @@
     font-family: "Tektur", sans-serif;
 }
 
+:root{
+    --clr-black: #1c1c1c;
+    --clr-gray:#ececec;
+    --clr-white: #f7f7f7;
 
+    --type-bug: #b6c922ff;
+    --type-dark: #755a51ff;
+    --type-dragon: #8623f7ff;
+    --type-electric: #edc534ff;
+    --type-normal:  #a83d9eff;
+
+}
 .tektur{
     font-family: "Tektur", sans-serif;
     font-optical-sizing: auto;
