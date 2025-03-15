@@ -2,7 +2,32 @@
     font-family: "Tektur", sans-serif;
 }
 
+:root{
+    --clr-black: #1c1c1c;
+    --clr-gray:#ececec;
+    --clr-white: #f7f7f7;
+    --card-border: #ffe659ff;
+    --search-btncolor: #fcd200ff;
 
+    --type-bug: #b6c922ff;
+    --type-dark: #755a51ff;
+    --type-dragon: #8623f7ff;
+    --type-electric: #edc534ff;
+    --type-fairy: #dca4e0ff;
+    --type-fighting: #bd3631ff;
+    --type-fire: #fa8339ff;
+    --type-flying:  #8266adff;
+    --type-ghost: #71588cff;
+    --type-grass: #a1e880ff;
+    --type-ground: #dbc56eff;
+    --type-ice: #94d4ccff;
+    --type-normal: #b6ba8dff;
+    --type-poison: #a83d9eff;
+    --type-psychic: #e04f78ff;
+    --type-rock: #b59f2fff;
+    --type-steel: #bcb8d1ff;
+    --type-water: #2aabdeff;
+}
 .tektur{
     font-family: "Tektur", sans-serif;
     font-optical-sizing: auto;
