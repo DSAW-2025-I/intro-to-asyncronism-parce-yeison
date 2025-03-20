@@ -14,9 +14,9 @@
   <div class="background-img flex items-center justify-center">
     <div class="w-full h-full flex flex-col justify-start items-center p-4">
       
-      <header class="w-72 mb-2">
-        <img src="imgs/pokemonLogo.webp" alt="Pokémon Logo" class="w-72" />
-      </header>
+        <header class="logo-header mb-2">
+            <img src="imgs/pokemonLogo.webp" alt="Pokémon Logo" class="pokemon-logo" />
+          </header>          
       
       <div class="w-full max-w-md flex flex-row justify-center items-center translate-x--12">
         <section class="search-container flex items-center justify-center text-gray-700 p-4">
@@ -41,12 +41,11 @@
           <img
             src="imgs/assets/colaPikachu.webp"
             alt="Pikachu Tail"
-            class="w-[20vw] h-[20vw] rotate-50 absolute left-full ml-[-2.2vw] top-[50%] transform -translate-y-15"
+            class="w-[20vw] h-[20vw] rotate-50 absolute left-full ml-[-2.2vw] top-[50%] transform -translate-y-15 z-index-[0]"
           />
         </button>
       </div>
-      
-      <div id="filterbox" class="flex flex-row justify-center items-center w-full mt-3"></div>
+      <div id="filterbox" class="flex flex-wrap justify-center items-center w-full mt-3"></div>
           <pokemon-card pokemon-id="250"></pokemon-card>
     </div>
   </div>
