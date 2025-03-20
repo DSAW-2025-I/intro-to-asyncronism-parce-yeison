@@ -1,18 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> God Pokemon Cards</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>God Pokemon Cards</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap" rel="stylesheet" />
 </head>
-<body>
-    <h1 class=" text-red-700 text-xl">Hola      SADHSAKJHDFGASKJfhaksdjl</h1>
-    <pokemon-card pokemon-id="2"></pokemon-card>
-    <script src="pokemonCard.js"></script>
+
+<body class="font-sans">
+    <div class="background-img flex items-center justify-center content">
+        <div class="w-full h-full flex flex-col justify-start items-center p-4">
+
+            <header class="logo-header mb-2">
+                <img src="imgs/pokemonLogo.webp" alt="Pokémon Logo" class="pokemon-logo" />
+            </header>
+
+            <div class="w-full max-w-md flex flex-row justify-center items-center translate-x--12">
+                <section class="search-container flex items-center justify-center text-gray-700 p-4">
+                    <form action="#" method="GET" class="w-full flex">
+                        <label for="search" class="sr-only">Search for a Pokémon</label>
+                        <input type="text" id="search" placeholder="Search for a Pokémon"
+                            class="w-full p-2 rounded-l-md focus:outline-none hover:outline-none" />
+                    </form>
+                </section>
+                <button type="submit" id="searchBtn"
+                    class="w-[15vw] h-[5.3vh] bg-[#e8c309ff] relative rounded-r-md flex items-center justify-center hover:scale-105 active:scale-95 transition-transform duration-200">
+                    <span class="absolute inset-0 flex items-center justify-center text-black font-medium">
+                        Search
+                    </span>
+                    <img src="imgs/assets/colaPikachu.webp" alt="Pikachu Tail"
+                        class="w-[20vw] h-[20vw] rotate-50 absolute left-full ml-[-2.2vw] top-[50%] transform -translate-y-15 z-index-[0]" />
+                </button>
+            </div>
+            <div id="filterbox" class="flex flex-wrap justify-center items-center w-full mt-3"></div>
+            <div id="cardsContainer"></div>
+    </div>
+
+    <script src="./pokemonCard.js"></script>
+    <script src="filterButtons.js"></script>
+    <script src="./searchEngine.js"></script>
+
 </body>
+
 </html>

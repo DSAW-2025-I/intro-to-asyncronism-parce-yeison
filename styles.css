@@ -1,47 +1,193 @@
-*{
-    font-family: "Tektur", sans-serif;
+* {
+  font-family: "Tektur", sans-serif;
+  box-sizing: border-box;
 }
 
-:root{
-    --clr-black: #1c1c1c;
-    --clr-gray:#ececec;
-    --clr-white: #f7f7f7;
-    --card-border: #ffe659ff;
-    --search-btncolor: #fcd200ff;
-
-    --type-bug: #b6c922ff;
-    --type-dark: #755a51ff;
-    --type-dragon: #8623f7ff;
-    --type-electric: #edc534ff;
-    --type-fairy: #dca4e0ff;
-    --type-fighting: #bd3631ff;
-    --type-fire: #fa8339ff;
-    --type-flying:  #8266adff;
-    --type-ghost: #71588cff;
-    --type-grass: #a1e880ff;
-    --type-ground: #dbc56eff;
-    --type-ice: #94d4ccff;
-    --type-normal: #b6ba8dff;
-    --type-poison: #a83d9eff;
-    --type-psychic: #e04f78ff;
-    --type-rock: #b59f2fff;
-    --type-steel: #bcb8d1ff;
-    --type-water: #2aabdeff;
+:root {
+  --clr-black: #1c1c1c;
+  --clr-gray: #ececec;
+  --clr-white: #f7f7f7;
+  --card-border: #ffe659ff;
+  --search-btncolor: #fcd200ff;
+  --type-bug: #b6c922ff;
+  --type-dark: #755a51ff;
+  --type-dragon: #8623f7ff;
+  --type-electric: #edc534ff;
+  --type-fairy: #dca4e0ff;
+  --type-fighting: #bd3631ff;
+  --type-fire: #fa8339ff;
+  --type-flying: #8266adff;
+  --type-ghost: #71588cff;
+  --type-grass: #a1e880ff;
+  --type-ground: #dbc56eff;
+  --type-ice: #94d4ccff;
+  --type-normal: #b6ba8dff;
+  --type-poison: #a83d9eff;
+  --type-psychic: #e04f78ff;
+  --type-rock: #b59f2fff;
+  --type-steel: #bcb8d1ff;
+  --type-water: #2aabdeff;
 }
-.tektur{
-    font-family: "Tektur", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
+
+.tektur {
+  font-family: "Tektur", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+#cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  column-gap: 1.85rem;
+  row-gap: 2rem;
+  max-width: 1200px; /* Limita el ancho máximo del contenedor */
+  width: 100%;
+  padding: 1rem;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+img.pokemon-logo {
+  width: 280px;
+  height: auto;
+}
+
+  :root {
+    --card-width: 70px;
+    --card-height: 100px;
+  }
+  
+  /* Contenedor general de cartas */
+  .pokemon-container {
+    display: grid;
+    gap: 10px;
+    padding: 1rem;
+    justify-content: center;
+  }
+  
+  /* En pantallas muy pequeñas: máximo 1 columna */
+  @media (max-width: 599px) {
+    .pokemon-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* En pantallas medianas: 2 columnas (las cartas se mantienen en tamaño base) */
+  @media (min-width: 600px) and (max-width: 1023px) {
+    .pokemon-container {
+      grid-template-columns: repeat(2, auto);
+      justify-content: center;
+    }
+  }
+  
+  /* En pantallas grandes: agrandamos las cartas y usamos 4 columnas, por ejemplo */
+  @media (min-width: 1024px) {
+    :root {
+      --card-width: 140px;  /* Incrementamos el ancho */
+      --card-height: 200px; /* Manteniendo la proporción 70:100 */
+    }
+    .pokemon-container {
+      grid-template-columns: repeat(4, auto);
+      justify-content: center;
+    }
   }
 
-  body{
-    background-image: url('./imgs/backgroundDisplay/backgoundTablet-desktop.webp');
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .background-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('imgs/backgroundDisplay/backgroundMobile.webp');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh; 
-    margin: 0;
   }
+  
+  .content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    /* Asegúrate de que el contenido tenga suficiente altura para permitir scroll */
+    min-height: 200vh; /* Ejemplo para forzar scroll; ajusta según tu contenido */
+  }
+img.pokemon-logo {
+  width: 280px;
+  height: 102px;
+  margin-top: 10px;
+}
+
+.search-container {
+  background-color: whitesmoke;
+  position: relative;
+  width: 60vw;
+  height: 5vh;
+  border-radius: 5px;
+  overflow: hidden;
+  border: solid 0.5px black;
+}
+
+@media (min-width: 768px) {
+  .background-img {
+    background-image: url('imgs/backgroundDisplay/backgoundTablet-desktop.webp');
+  }
+
+  
+  img.pokemon-logo {
+    width: 50vw;
+    height: 40vh;
+  }
+  
+  .search-container {
+    width: 60vw;
+    height: 6vh;
+  }
+  
+  #searchBtn img {
+    width: 30vw;
+    height: 14vh;
+    position: absolute;
+    left: 10.5vw; /**112%**/
+    top: 4vh;
+    z-index: 1;
+    transform: rotate(50);
+  }
+}
+@media (min-width: 1023px) {
+  #searchBtn img {
+    width: 30vw;
+    height: 14vh;
+    position: absolute;
+    left: 8.4vw; /**112%**/
+    top: 4vh;
+    transform: rotate(50);
+  }
+}
+@media(min-width: 1279px) {
+  #searchBtn img {
+    width: 30vw;
+    height: 14vh;
+    position: absolute;
+    left: 7.5vw; /**112%**/
+    top: 1vh;
+    transform: rotate(50);
+  }
+}
+@media(min-width: 1399px){
+  #searchBtn img {
+    width: 30vw;
+    height: 14vh;
+    position: absolute;
+    left: 7.2vw; /**112%**/
+    top: -0.5vh;
+    transform: rotate(50);
+  }
+}
+
