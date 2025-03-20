@@ -3,6 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchBtn = document.getElementById("searchBtn");
     const searchForm = document.querySelector(".search-container form");
     const cardsContainer = document.getElementById("cardsContainer");
+    const clearBtn = document.getElementById("clearSearch");
+
+    clearBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        searchInput.value = "";
+        renderAllCards();
+      });
 
 
     if (searchForm) {
@@ -70,3 +77,5 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     }
 });
+
+

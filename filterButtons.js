@@ -19,13 +19,8 @@ const pokemonTypes = [
   { name: "water", color: "var(--type-water)" }
 ];
 
-// Variable global para almacenar la lista completa (151 Pokémon)
 let allPokemonList = [];
 
-/**
- * Crea la interfaz de usuario para los filtros.
- * Se utiliza debounce en el resize para optimizar el rendimiento.
- */
 function createFilterUI() {
   const container = document.getElementById("filterbox");
   if (!container) {
@@ -36,7 +31,6 @@ function createFilterUI() {
   container.innerHTML = "";
   
   if (window.innerWidth < 768) {
-    // Usamos un <select> para pantallas pequeñas
     const select = document.createElement("select");
     select.className = "p-2 border border-gray-300 rounded-md";
     
@@ -68,13 +62,12 @@ function createFilterUI() {
     clearBtn.addEventListener("click", () => {
       select.value = "";
       console.log("Filtro limpiado");
-      // Al limpiar el filtro, cargamos 10 Pokémon aleatorios
       renderPokemonCards(getRandomSubset(allPokemonList, 10));
     });
     container.appendChild(clearBtn);
     
   } else {
-    // Para pantallas grandes, se crean botones para cada tipo
+
     pokemonTypes.forEach(type => {
       const btn = document.createElement("button");
       btn.textContent = type.name.charAt(0).toUpperCase() + type.name.slice(1);
@@ -119,7 +112,6 @@ function fetchAllPokemon() {
         const id = parts[parts.length - 2];
         return { id, name: pokemon.name };
       });
-      // Renderiza 10 Pokémon aleatorios al inicio
       renderPokemonCards(getRandomSubset(allPokemonList, 10));
     })
     .catch(error => {
@@ -127,10 +119,6 @@ function fetchAllPokemon() {
     });
 }
 
-/**
- * Filtra los Pokémon por tipo.
- * Si no se pasa un tipo, se renderiza una selección aleatoria de 10 Pokémon.
- */
 function filterPokemonByType(type) {
   if (!type) {
     renderPokemonCards(getRandomSubset(allPokemonList, 10));
@@ -152,9 +140,6 @@ function filterPokemonByType(type) {
   }
 }
 
-/**
- * Devuelve un subconjunto aleatorio de N elementos de un arreglo.
- */
 function getRandomSubset(arr, n) {
   if (!arr || arr.length === 0) return [];
   let shuffled = [...arr];
@@ -165,9 +150,6 @@ function getRandomSubset(arr, n) {
   return shuffled.slice(0, n);
 }
 
-/**
- * Función debounce para optimizar la ejecución de eventos frecuentes.
- */
 function debounce(func, delay) {
   let timeoutId;
   return function(...args) {
@@ -178,11 +160,9 @@ function debounce(func, delay) {
   };
 }
 
-// Inicializa la UI y carga la lista de Pokémon cuando el DOM esté listo
 document.addEventListener("DOMContentLoaded", () => {
   createFilterUI();
   fetchAllPokemon();
 });
 
-// Optimiza el redimensionamiento con debounce
 window.addEventListener("resize", debounce(createFilterUI, 300));
