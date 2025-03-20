@@ -340,7 +340,6 @@ class PokemonCard extends HTMLElement {
                             </div>
                             <div class="moves">
                                 <p>${pokemon.abilities[0].ability.name}</p>
-                                <p>${pokemon.abilities[1].ability.name}</p>
                             </div>
                         </section>
                     </section>
