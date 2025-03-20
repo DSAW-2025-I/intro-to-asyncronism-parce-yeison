@@ -42,6 +42,7 @@
   background-size: cover;
   background-position: center;
   height: 100vh;
+  min-height: 100vh;
   width: 100%;
   position: relative;
 }
@@ -55,10 +56,9 @@ img.pokemon-logo {
 .search-container {
   background-color: whitesmoke;
   position: relative;
-  width: 65vw;
+  width: 60vw;
   height: 5vh;
   border-radius: 5px;
   overflow: hidden;
   border: solid 0.5px black
 }
-
