@@ -100,10 +100,6 @@ function createFilterUI() {
   }
 }
 
-/**
- * Renderiza los elementos <pokemon-card> en el contenedor.
- * Se asume que el componente <pokemon-card> internamente gestiona la carga de datos.
- */
 function renderPokemonCards(pokemonList) {
   const container = document.getElementById("cardsContainer");
   container.innerHTML = "";
@@ -114,11 +110,6 @@ function renderPokemonCards(pokemonList) {
     container.appendChild(card);
   });
 }
-
-/**
- * Obtiene los primeros 151 Pokémon y los almacena en la variable global.
- * Al finalizar, se renderizan 10 Pokémon aleatorios.
- */
 function fetchAllPokemon() {
   fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
     .then(res => res.json())

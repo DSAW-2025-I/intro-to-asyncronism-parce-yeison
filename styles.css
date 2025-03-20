@@ -37,6 +37,47 @@
       "wdth" 100;
   }
 
+  :root {
+    --card-width: 70px;
+    --card-height: 100px;
+  }
+  
+  /* Contenedor general de cartas */
+  .pokemon-container {
+    display: grid;
+    gap: 10px;
+    padding: 1rem;
+    justify-content: center;
+  }
+  
+  /* En pantallas muy pequeñas: máximo 1 columna */
+  @media (max-width: 599px) {
+    .pokemon-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* En pantallas medianas: 2 columnas (las cartas se mantienen en tamaño base) */
+  @media (min-width: 600px) and (max-width: 1023px) {
+    .pokemon-container {
+      grid-template-columns: repeat(2, auto);
+      justify-content: center;
+    }
+  }
+  
+  /* En pantallas grandes: agrandamos las cartas y usamos 4 columnas, por ejemplo */
+  @media (min-width: 1024px) {
+    :root {
+      --card-width: 140px;  /* Incrementamos el ancho */
+      --card-height: 200px; /* Manteniendo la proporción 70:100 */
+    }
+    .pokemon-container {
+      grid-template-columns: repeat(4, auto);
+      justify-content: center;
+    }
+  }
+
+  
 .background-img {
   background-image: url('imgs/backgroundDisplay/backgroundMobile.webp');
   background-size: cover;
