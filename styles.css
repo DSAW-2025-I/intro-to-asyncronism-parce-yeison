@@ -37,6 +37,18 @@
   font-variation-settings: "wdth" 100;
 }
 
+#cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  column-gap: 1.85rem;
+  row-gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  padding: 1rem;
+  margin: 0 auto;
+  justify-items: center;
+}
+
 img.pokemon-logo {
   width: 280px;
   height: auto;
@@ -98,15 +110,14 @@ img.pokemon-logo {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    z-index: -1; /* Se ubica detrás del contenido */
+    z-index: -1;
   }
   
   .content {
     position: relative;
     z-index: 1;
     padding: 20px;
-    /* Asegúrate de que el contenido tenga suficiente altura para permitir scroll */
-    min-height: 200vh; /* Ejemplo para forzar scroll; ajusta según tu contenido */
+    min-height: 200vh; 
   }
 img.pokemon-logo {
   width: 280px;
@@ -122,16 +133,6 @@ img.pokemon-logo {
   border-radius: 5px;
   overflow: hidden;
   border: solid 0.5px black;
-}
-
-#cardsContainer {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  width: 100%;
-  padding: 1rem;
-  margin: 0 auto;
-  justify-items: center;
 }
 
 @media (min-width: 768px) {
