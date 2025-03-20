@@ -346,5 +346,13 @@ class PokemonCard extends HTMLElement {
         `;
     }
 }
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("cardsContainer");
+    for (let i = 1; i <= 20; i++) {
+      const card = document.createElement("pokemon-card");
+      card.setAttribute("pokemon-id", i);
+      container.appendChild(card);
+    }
+  });
 
 customElements.define("pokemon-card", PokemonCard);

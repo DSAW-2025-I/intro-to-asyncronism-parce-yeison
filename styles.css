@@ -47,7 +47,7 @@ img.pokemon-logo {
     --card-height: 100px;
   }
   
-  /* Contenedor general de cartas */
+
   .pokemon-container {
     display: grid;
     gap: 10px;
@@ -55,14 +55,14 @@ img.pokemon-logo {
     justify-content: center;
   }
   
-  /* En pantallas muy pequeñas: máximo 1 columna */
+
   @media (max-width: 599px) {
     .pokemon-container {
       grid-template-columns: 1fr;
     }
   }
   
-  /* En pantallas medianas: 2 columnas (las cartas se mantienen en tamaño base) */
+
   @media (min-width: 600px) and (max-width: 1023px) {
     .pokemon-container {
       grid-template-columns: repeat(2, auto);
@@ -70,11 +70,11 @@ img.pokemon-logo {
     }
   }
   
-  /* En pantallas grandes: agrandamos las cartas y usamos 4 columnas, por ejemplo */
+
   @media (min-width: 1024px) {
     :root {
-      --card-width: 140px;  /* Incrementamos el ancho */
-      --card-height: 200px; /* Manteniendo la proporción 70:100 */
+      --card-width: 140px;  
+      --card-height: 200px; 
     }
     .pokemon-container {
       grid-template-columns: repeat(4, auto);
@@ -122,6 +122,16 @@ img.pokemon-logo {
   border-radius: 5px;
   overflow: hidden;
   border: solid 0.5px black;
+}
+
+#cardsContainer {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  width: 100%;
+  padding: 1rem;
+  margin: 0 auto;
+  justify-items: center;
 }
 
 @media (min-width: 768px) {
