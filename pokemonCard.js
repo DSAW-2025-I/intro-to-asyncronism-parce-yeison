@@ -56,7 +56,7 @@ class PokemonCard extends HTMLElement {
             case "water": return "./imgs/typesLogo/waterLogo.png"; 
             case "grass": return "./imgs/typesLogo/grassLogo.png"; 
             case "electric": return "./imgs/typesLogo/electricLogo.png"; 
-            case "psychic": return "./imgs/typesLogo/PsychicLogo.png"; 
+            case "psychic": return "./imgs/typesLogo/psychicLogo.png"; 
             case "ice": return "./imgs/typesLogo/iceLogo.png"; 
             case "dragon": return "./imgs/typesLogo/dragonLogo.png"; 
             case "dark": return "./imgs/typesLogo/darkLogo.png"; 
